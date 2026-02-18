@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A0FF73FB-F8D2-4AA8-B2DC-D419A9053C6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GatewayApi", "src\GatewayApi\GatewayApi.csproj", "{C5B84CD0-6C93-4735-926D-28DD56A40466}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryService", "src\InventoryService\InventoryService.csproj", "{3A022C5F-1056-41D2-A2C6-492C46F2667C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificationService", "src\NotificationService\NotificationService.csproj", "{1E2C5C50-C732-4593-8637-B6477F37B3EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderService", "src\OrderService\OrderService.csproj", "{D13072CA-0CA9-4E4B-8319-14628C747BB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentService", "src\PaymentService\PaymentService.csproj", "{E1496B2D-6E02-4238-B3E5-ECF5A0150867}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Contracts", "src\Shared.Contracts\Shared.Contracts.csproj", "{1BDB2B2B-F258-4F02-8EC5-922D7EF3A00C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5B84CD0-6C93-4735-926D-28DD56A40466}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5B84CD0-6C93-4735-926D-28DD56A40466}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5B84CD0-6C93-4735-926D-28DD56A40466}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5B84CD0-6C93-4735-926D-28DD56A40466}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A022C5F-1056-41D2-A2C6-492C46F2667C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A022C5F-1056-41D2-A2C6-492C46F2667C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A022C5F-1056-41D2-A2C6-492C46F2667C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A022C5F-1056-41D2-A2C6-492C46F2667C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E2C5C50-C732-4593-8637-B6477F37B3EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E2C5C50-C732-4593-8637-B6477F37B3EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E2C5C50-C732-4593-8637-B6477F37B3EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E2C5C50-C732-4593-8637-B6477F37B3EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D13072CA-0CA9-4E4B-8319-14628C747BB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D13072CA-0CA9-4E4B-8319-14628C747BB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D13072CA-0CA9-4E4B-8319-14628C747BB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D13072CA-0CA9-4E4B-8319-14628C747BB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1496B2D-6E02-4238-B3E5-ECF5A0150867}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1496B2D-6E02-4238-B3E5-ECF5A0150867}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1496B2D-6E02-4238-B3E5-ECF5A0150867}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1496B2D-6E02-4238-B3E5-ECF5A0150867}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BDB2B2B-F258-4F02-8EC5-922D7EF3A00C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BDB2B2B-F258-4F02-8EC5-922D7EF3A00C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BDB2B2B-F258-4F02-8EC5-922D7EF3A00C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BDB2B2B-F258-4F02-8EC5-922D7EF3A00C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C5B84CD0-6C93-4735-926D-28DD56A40466} = {A0FF73FB-F8D2-4AA8-B2DC-D419A9053C6A}
+		{3A022C5F-1056-41D2-A2C6-492C46F2667C} = {A0FF73FB-F8D2-4AA8-B2DC-D419A9053C6A}
+		{1E2C5C50-C732-4593-8637-B6477F37B3EB} = {A0FF73FB-F8D2-4AA8-B2DC-D419A9053C6A}
+		{D13072CA-0CA9-4E4B-8319-14628C747BB5} = {A0FF73FB-F8D2-4AA8-B2DC-D419A9053C6A}
+		{E1496B2D-6E02-4238-B3E5-ECF5A0150867} = {A0FF73FB-F8D2-4AA8-B2DC-D419A9053C6A}
+		{1BDB2B2B-F258-4F02-8EC5-922D7EF3A00C} = {A0FF73FB-F8D2-4AA8-B2DC-D419A9053C6A}
+	EndGlobalSection
+EndGlobal
