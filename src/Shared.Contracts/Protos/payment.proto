@@ -1,0 +1,17 @@
+syntax = "proto3";
+ 
+option csharp_namespace = "Shared.Contracts";
+ 
+service PaymentGrpc {
+  rpc ValidatePayment (PaymentRequest) returns (PaymentResponse);
+}
+ 
+message PaymentRequest {
+  string orderId = 1;
+  double amount = 2;
+}
+ 
+message PaymentResponse {
+  bool isSuccess = 1;
+  string message = 2;
+}
