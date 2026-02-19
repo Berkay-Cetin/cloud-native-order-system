@@ -1,28 +1,74 @@
+using MassTransit;
 using Shared.Contracts;
+using Shared.Contracts.Events;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddGrpc();
+// gRPC server (ileride lazım olabilir)
+// builder.Services.AddGrpc();
 
-// gRPC client registration
+// --------------------
+// MassTransit + RabbitMQ
+// --------------------
+builder.Services.AddMassTransit(x =>
+{
+    x.UsingRabbitMq((context, cfg) =>
+    {
+        cfg.Host("localhost", "/", h =>
+        {
+            h.Username("guest");
+            h.Password("guest");
+        });
+    });
+});
+
+// --------------------
+// gRPC Client (PaymentService)
+// --------------------
 builder.Services.AddGrpcClient<PaymentGrpc.PaymentGrpcClient>(o =>
 {
-    o.Address = new Uri("https://localhost:7124");
+    o.Address = new Uri("http://localhost:5006");
 });
+
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.ListenLocalhost(5030, o =>
+    {
+        o.Protocols = Microsoft.AspNetCore.Server.Kestrel.Core.HttpProtocols.Http1;
+    });
+});
+
 
 var app = builder.Build();
 
-app.MapGet("/create-order", async (PaymentGrpc.PaymentGrpcClient paymentClient) =>
+// --------------------
+// Minimal API Endpoint
+// --------------------
+app.MapGet("/create-order", async (
+    PaymentGrpc.PaymentGrpcClient paymentClient,
+    IPublishEndpoint publishEndpoint) =>
 {
-    var response = await paymentClient.ValidatePaymentAsync(
+    var orderId = Guid.NewGuid();
+
+    var paymentResponse = await paymentClient.ValidatePaymentAsync(
         new PaymentRequest
         {
-            OrderId = Guid.NewGuid().ToString(),
+            OrderId = orderId.ToString(),
             Amount = 500
         });
 
-    return Results.Ok(response);
+    if (paymentResponse.IsSuccess)
+    {
+        await publishEndpoint.Publish(new OrderCreatedEvent
+        {
+            OrderId = orderId,
+            ProductName = "Sample Product",
+            Price = 500,
+            CreatedAt = DateTime.UtcNow
+        });
+    }
+
+    return Results.Ok(paymentResponse);
 });
 
 app.Run();
