@@ -1,8 +1,34 @@
-using NotificationService;
-using MassTransit;
+// using NotificationService;
+// using MassTransit;
+// using NotificationService.Consumers;
 
-var builder = Host.CreateApplicationBuilder(args);
-builder.Services.AddHostedService<Worker>();
+// var builder = Host.CreateApplicationBuilder(args);
+// builder.Services.AddHostedService<Worker>();
+
+// builder.Services.AddMassTransit(x =>
+// {
+//     x.AddConsumer<OrderCreatedConsumer>();
+
+//     x.UsingRabbitMq((context, cfg) =>
+//     {
+//         cfg.Host("localhost", "/", h =>
+//         {
+//             h.Username("guest");
+//             h.Password("guest");
+//         });
+
+//         cfg.ConfigureEndpoints(context);
+//     });
+// });
+
+// var host = builder.Build();
+// host.Run();
+
+using MassTransit;
+using Microsoft.AspNetCore.Builder;
+using NotificationService.Consumers;
+
+var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddMassTransit(x =>
 {
@@ -10,15 +36,15 @@ builder.Services.AddMassTransit(x =>
 
     x.UsingRabbitMq((context, cfg) =>
     {
-        cfg.Host("localhost", "/", h =>
-        {
-            h.Username("guest");
-            h.Password("guest");
-        });
+        cfg.Host("localhost");
 
-        cfg.ConfigureEndpoints(context);
+        cfg.ReceiveEndpoint("notification-service-queue", e =>
+        {
+            e.ConfigureConsumer<OrderCreatedConsumer>(context);
+        });
     });
 });
 
-var host = builder.Build();
-host.Run();
+var app = builder.Build();
+
+app.Run();
