@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Q/fJGzlx45AZm2zGLhyWxRMKYShd2i8PD/227oYB9BQ4eu68ze2byovV63l+cHpjFAwc8IasXSuVvZhOyO9UCA==",
+  "dgSpecHash": "0CuKjHwMhrpdb9a01hNriZU7S1+9g3ovzIRzcA+DKxViAVmYZq5Tm2TOwWCPzoB9XJpDEnuVs2Z5SX//eAyGFg==",
   "success": true,
   "projectFilePath": "/home/local/workspace/tryouts/cloud-native-order-system/src/InventoryService/InventoryService.csproj",
   "expectedPackageFiles": [

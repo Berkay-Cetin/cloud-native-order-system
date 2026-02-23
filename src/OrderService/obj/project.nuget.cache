@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "GWCDy1hmhGL+NoEB8QW3ArumuLRKfvoPWQjhXPkqTJY5ZPXGgfUvPxXtl9xCVfO0GdS/R9819k1QEvtZ9gYBOQ==",
+  "dgSpecHash": "mjPix8fNiJB0Bm+DZHIrXhbxJQqbQA1f/90EdeNLFDLzgBStrSSDFR2Fqne0hP/3jnCxiNXj5j41kbxTY9y5Ag==",
   "success": true,
   "projectFilePath": "/home/local/workspace/tryouts/cloud-native-order-system/src/OrderService/OrderService.csproj",
   "expectedPackageFiles": [

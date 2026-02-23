@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "SdsZwz5FWgZmZHMc1bwNxjabbvZMOIUNmroWT0+ZaFJghMci6WyrQCntyjjVIwZ/ybgv4O804BNwV++TN2gmyg==",
+  "dgSpecHash": "bL+KUqLEExgs/UKQ8nbkRZIDFb9KM1mTIqCZFjhevw0GHrmyqSuDZ5MmX1qH/fs9JfabdPuue2ZNoZGzIaSiEg==",
   "success": true,
   "projectFilePath": "/home/local/workspace/tryouts/cloud-native-order-system/src/PaymentService/PaymentService.csproj",
   "expectedPackageFiles": [

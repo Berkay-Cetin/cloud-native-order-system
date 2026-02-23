@@ -1,17 +1,18 @@
 using MassTransit;
 using Shared.Contracts;
 using Shared.Contracts.Events;
+using OrderService.Sagas;
 
 var builder = WebApplication.CreateBuilder(args);
-
-// gRPC server (ileride lazım olabilir)
-// builder.Services.AddGrpc();
 
 // --------------------
 // MassTransit + RabbitMQ
 // --------------------
 builder.Services.AddMassTransit(x =>
 {
+    x.AddSagaStateMachine<OrderStateMachine, OrderState>()
+        .InMemoryRepository();
+
     x.UsingRabbitMq((context, cfg) =>
     {
         cfg.Host("localhost", "/", h =>
@@ -19,6 +20,7 @@ builder.Services.AddMassTransit(x =>
             h.Username("guest");
             h.Password("guest");
         });
+        cfg.ConfigureEndpoints(context);
     });
 });
 
@@ -30,6 +32,7 @@ builder.Services.AddGrpcClient<PaymentGrpc.PaymentGrpcClient>(o =>
     o.Address = new Uri("http://localhost:5006");
 });
 
+// HTTP1 endpoint
 builder.WebHost.ConfigureKestrel(options =>
 {
     options.ListenLocalhost(5030, o =>

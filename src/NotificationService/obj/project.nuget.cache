@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "iUA0jVae9rAZ6a98/jNXNjOWcAJqd/ViUaTdwykRy+NtyBCdN7ij2d78bTYUYU44CmDpGi6n2naozvVqSRug7w==",
+  "dgSpecHash": "UCbwwhb6SVqAmiR8ZzzESBqVyZjynMuTv36+7KXoj/q7ZwTtjjigIH2Q+J4rfU8VxxyIYLTpiDNBc4H6yoy71g==",
   "success": true,
   "projectFilePath": "/home/local/workspace/tryouts/cloud-native-order-system/src/NotificationService/NotificationService.csproj",
   "expectedPackageFiles": [

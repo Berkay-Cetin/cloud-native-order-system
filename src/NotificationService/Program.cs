@@ -1,29 +1,3 @@
-// using NotificationService;
-// using MassTransit;
-// using NotificationService.Consumers;
-
-// var builder = Host.CreateApplicationBuilder(args);
-// builder.Services.AddHostedService<Worker>();
-
-// builder.Services.AddMassTransit(x =>
-// {
-//     x.AddConsumer<OrderCreatedConsumer>();
-
-//     x.UsingRabbitMq((context, cfg) =>
-//     {
-//         cfg.Host("localhost", "/", h =>
-//         {
-//             h.Username("guest");
-//             h.Password("guest");
-//         });
-
-//         cfg.ConfigureEndpoints(context);
-//     });
-// });
-
-// var host = builder.Build();
-// host.Run();
-
 using MassTransit;
 using Microsoft.AspNetCore.Builder;
 using NotificationService.Consumers;
@@ -36,7 +10,13 @@ builder.Services.AddMassTransit(x =>
 
     x.UsingRabbitMq((context, cfg) =>
     {
-        cfg.Host("localhost");
+        cfg.Host("localhost", "/", h =>
+        {
+            h.Username("guest");
+            h.Password("guest");
+        });
+
+        // cfg.ConfigureEndpoints(context);
 
         cfg.ReceiveEndpoint("notification-service-queue", e =>
         {

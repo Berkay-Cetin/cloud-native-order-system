@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "7ciAyNnLmQwS4yM7sbDb2VtM2Xs9mOEptETXtPte+5ke5XfKrW2PK4tQ2MjiWy72NL0YT3JSWSu4VAetKk4iCg==",
+  "dgSpecHash": "MAT+bdbUWLZHjlOYPlh+lN3dClVu93v9VCt9X1iu2eCAJWthm4PzaOszOfV76eZxeDcFE/BFILooP+xjgTur9Q==",
   "success": true,
   "projectFilePath": "/home/local/workspace/tryouts/cloud-native-order-system/src/GatewayApi/GatewayApi.csproj",
   "expectedPackageFiles": [

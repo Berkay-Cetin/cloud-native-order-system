@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "QHwISJD0Pq+qqDwnzCpt1h8jvwlQUIR8xrFY6Y0AoZ7hiL/ytnAXUz/JlXhAiNTQXbbVhcMGdNPOHAUrkYVwNA==",
+  "dgSpecHash": "KI09XAOvnIh7T6G3UFHS9k4zlC/WeGw9g/8TrGOA36jDp6JP5IfSymRNKKZbMfM4CG22s879dw9bK8WcEZV+TA==",
   "success": true,
   "projectFilePath": "/home/local/workspace/tryouts/cloud-native-order-system/src/Shared.Contracts/Shared.Contracts.csproj",
   "expectedPackageFiles": [
