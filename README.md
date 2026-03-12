@@ -1,5 +1,11 @@
 # Cloud Native Order System
 
+![.NET](https://img.shields.io/badge/.NET-8-512BD4?style=flat&logo=dotnet)
+![RabbitMQ](https://img.shields.io/badge/RabbitMQ-3-FF6600?style=flat&logo=rabbitmq)
+![MassTransit](https://img.shields.io/badge/MassTransit-Saga-512BD4?style=flat&logo=dotnet)
+![gRPC](https://img.shields.io/badge/gRPC-Protobuf-244c5a?style=flat&logo=grpc)
+![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?style=flat&logo=docker)
+
 A distributed microservices sample built with .NET demonstrating event-driven architecture, gRPC communication and the Saga pattern for distributed transactions.
 
 ## Architecture
